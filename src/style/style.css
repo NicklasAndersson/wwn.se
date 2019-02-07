@@ -1,7 +1,6 @@
-@import url("../../inter-ui-3-2/inter-ui.css");
 /* line 2, style.scss */
 body {
-    font-family: 'Inter UI', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #222C36;
 }
 

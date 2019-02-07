@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-# ssh oderland 'mkdir -p /home2/nicklasa/wwn.se/images'
-# scp -r images/*.png oderland:/home2/nicklasa/wwn.se/images
 
-# ssh oderland 'mkdir -p /home2/nicklasa/wwn.se/inter-ui-3-2'
-# scp -pr inter-ui-3-2/*.{woff,woff2,css} oderland:/home2/nicklasa/wwn.se/inter-ui-3-2
-
+yarn webpack
+ssh oderland 'rm /home2/nicklasa/wwn.se/*.png'
+ssh oderland 'rm /home2/nicklasa/wwn.se/*.js'
+ssh oderland 'rm /home2/nicklasa/wwn.se/*.html'
 scp dist/*.{html,png,js} oderland:/home2/nicklasa/wwn.se
 
 

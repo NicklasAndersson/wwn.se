@@ -17,77 +17,69 @@ function parseTime(time) {
 
 function parseTimeNoDate(time) {
     var arr = time.split('T');
-    return arr[1];
+    return arr[1].substring(0,5);
 }
 
-function parseDir1(dir) {
-    if(dir === 1){
-        return '*'
-    }else{
+function parseDir(dir) {
+    if (dir === 1) {
+        return '(N)'
+    } else {
         return ''
     }
 }
 
-function parseDir2(dir) {
-    if(dir === 2){
-        return '*'
-    }else{
-        return ''
-    }
-}
-
-function getTimesKallhall() {
-    httpGetAsync("https://pyapi.wwn.se/kallhall", function (r) {
+function getTimesFor(place, title) {
+    httpGetAsync("https://pyapi.wwn.se/" + place, function (r) {
         var parsed = JSON.parse(r);
-        $('#update-time-kallhall').empty();
-        $('#update-time-kallhall').append('Uppdaterad: '
+        $('#update-time').empty();
+        $('#update-time').append('Uppdaterad: '
             + parseTime(parsed.ResponseData.LatestUpdate));
-        console.log(parsed.ResponseData.LatestUpdate);
+        $('#train-list').append(buildSeparatorRow(title));
         var trains = parsed.ResponseData.Trains;
-        $('#train-list-kallhall').empty();
         for (var i = 0; i < trains.length; i++) {
-            $('#train-list-kallhall').append(
-                '<tr><td>'
-                + trains[i].Destination
-                + '</td><td>'
-                + parseTimeNoDate(trains[i].ExpectedDateTime)
-                + ' ' + parseDir1(trains[i].JourneyDirection)
-                + '</td></tr>'
+            $('#train-list').append(
+                buildRow(trains[i])
             );
         }
     })
 }
 
-function getTimesCity() {
-    httpGetAsync("https://pyapi.wwn.se/city", function (r) {
-        var parsed = JSON.parse(r);
-        $('#update-time-city').empty();
-        $('#update-time-city').append('Uppdaterad: '
-            + parseTime(parsed.ResponseData.LatestUpdate));
-        console.log(parsed.ResponseData.LatestUpdate);
-        var trains = parsed.ResponseData.Trains;
-        $('#train-list-city').empty();
-        for (var i = 0; i < trains.length; i++) {
-            $('#train-list-city').append(
-                '<tr><td>'
-                + trains[i].Destination
-                + '</td><td>'
-                + parseTimeNoDate(trains[i].ExpectedDateTime)
-                + ' ' + parseDir2(trains[i].JourneyDirection)
-                + '</td></tr>'
-            );
-        }
-    })
+function buildTableHeader() {
+    return '<thead>\n' +
+        '<tr>\n' +
+        '<th>Destination</th>\n' +
+        '<th>Avgång</th>\n' +
+        '</tr>\n' +
+        '</thead>';
 }
 
-function getTimes(){
-    getTimesCity();
-    getTimesKallhall();
+function buildSeparatorRow(title) {
+    return '<tr><th scope="row" colspan="2">' +
+        title
+        + '</th></tr>'
 }
 
-$( document ).ready(function() {
+function buildRow(train) {
+    return '<tr><td>'
+        + train.Destination
+        + '</td><td>'
+        + parseTimeNoDate(train.ExpectedDateTime)
+        + ' ' + parseDir(train.JourneyDirection)
+        + '</td></tr>'
+}
+
+function getTimes() {
+    $('#train-list').empty();
+    $('#train-list').append(buildTableHeader());
+
+    getTimesFor('kallhall','från Kallhäll');
+
+    getTimesFor('city','från Stockholm City');
+}
+
+$(document).ready(function () {
     getTimes();
-    var timerID = setInterval(function() {
+    var timerID = setInterval(function () {
         getTimes();
     }, 30 * 1000);
 });

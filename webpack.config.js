@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const webpack = require("webpack");
 const path = require('path');
@@ -13,7 +13,7 @@ module.exports = {
     }, // webpack entry point. Module to start building dependency graph
     output: {
         path: __dirname + '/dist', // Folder to store generated bundle
-        filename: '[name].bundle.js',  // Name of generated bundle after build
+        filename: '[name].[contenthash].js',  // Name of generated bundle after build
         publicPath: '/', // public URL of the output directory when referenced in a browser
         pathinfo: true
     },
@@ -77,6 +77,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new webpack.ProvidePlugin({
             "$": "jquery",
             "jQuery": "jquery",
@@ -84,7 +85,22 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: __dirname + "/src/public/index.html",
-            inject: 'body'
+            inject: 'body',
+            minify   : {
+                html5                          : true,
+                collapseWhitespace             : true,
+                minifyCSS                      : true,
+                minifyJS                       : true,
+                minifyURLs                     : false,
+                removeAttributeQuotes          : true,
+                removeComments                 : true,
+                removeEmptyAttributes          : true,
+                removeOptionalTags             : true,
+                removeRedundantAttributes      : true,
+                removeScriptTypeAttributes     : true,
+                removeStyleLinkTypeAttributese : true,
+                useShortDoctype                : true
+            }
         })
     ],
     devServer: {  // configuration for webpack-dev-server
