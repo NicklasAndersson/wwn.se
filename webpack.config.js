@@ -9,11 +9,11 @@ const path = require('path');
 module.exports = {
     entry: {
         main: __dirname + "/src/app/index.js",
-        jquery: __dirname + "/src/app/jquery_module.js"
+        //jquery: __dirname + "/src/app/jquery_module.js"
     }, // webpack entry point. Module to start building dependency graph
     output: {
         path: __dirname + '/dist', // Folder to store generated bundle
-        filename: '[name].[contenthash].js',  // Name of generated bundle after build
+        filename: '[name]-[contenthash].js',  // Name of generated bundle after build
         publicPath: '/', // public URL of the output directory when referenced in a browser
         pathinfo: true
     },

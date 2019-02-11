@@ -28,6 +28,9 @@ function parseDir(dir) {
     }
 }
 
+var parsedCity;
+var parsedKallhall;
+
 function getTimesFor(place, title) {
     httpGetAsync("https://pyapi.wwn.se/" + place, function (r) {
         var parsed = JSON.parse(r);
@@ -44,17 +47,23 @@ function getTimesFor(place, title) {
     })
 }
 
+function drawTable() {
+
+}
+
 function buildTableHeader() {
-    return '<thead>\n' +
-        '<tr>\n' +
-        '<th>Destination</th>\n' +
-        '<th>Avgång</th>\n' +
-        '</tr>\n' +
+    return '<thead>' +
+        '<tr>' +
+        '<th>Destination</th>' +
+        '<th>Avgång</th>' +
+        '<th></th>' +
+        '<th></th>' +
+        '</tr>' +
         '</thead>';
 }
 
 function buildSeparatorRow(title) {
-    return '<tr><th scope="row" colspan="2">' +
+    return '<tr><th scope="row" colspan="4">' +
         title
         + '</th></tr>'
 }
@@ -63,17 +72,22 @@ function buildRow(train) {
     return '<tr><td>'
         + train.Destination
         + '</td><td>'
+        + train.DisplayTime
+        + '</td><td>'
         + parseTimeNoDate(train.ExpectedDateTime)
-        + ' ' + parseDir(train.JourneyDirection)
+        + '</td><td>'
+        + parseDir(train.JourneyDirection)
         + '</td></tr>'
 }
 
-function getTimes() {
+function clearTable() {
     $('#train-list').empty();
     $('#train-list').append(buildTableHeader());
+}
 
+function getTimes() {
+    clearTable();
     getTimesFor('kallhall','från Kallhäll');
-
     getTimesFor('city','från Stockholm City');
 }
 
