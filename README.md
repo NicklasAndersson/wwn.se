@@ -1,2 +1,2 @@
-# startpage
-A simple startpage
+# wwn.se
+A simple startpage personalized for me
