@@ -7,6 +7,7 @@ const path = require('path');
 
 
 module.exports = {
+    mode: 'production',
     entry: {
         main: __dirname + "/src/app/index.js",
         //jquery: __dirname + "/src/app/jquery_module.js"

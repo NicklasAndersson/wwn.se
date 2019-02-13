@@ -22,14 +22,11 @@ function parseTimeNoDate(time) {
 
 function parseDir(dir) {
     if (dir === 1) {
-        return '(N)'
+        return '*';
     } else {
-        return ''
+        return '';
     }
 }
-
-var parsedCity;
-var parsedKallhall;
 
 function getTimesFor(place, title) {
     httpGetAsync("https://pyapi.wwn.se/" + place, function (r) {
@@ -88,12 +85,12 @@ function clearTable() {
 function getTimes() {
     clearTable();
     getTimesFor('kallhall','från Kallhäll');
-    getTimesFor('city','från Stockholm City');
+    //getTimesFor('city','från Stockholm City');
 }
 
 $(document).ready(function () {
     getTimes();
     var timerID = setInterval(function () {
         getTimes();
-    }, 30 * 1000);
+    }, 90 * 1000);
 });
