@@ -13,6 +13,6 @@ class Clock {
       const time = await response.json();
 
       this._el.innerHTML = `${time.currentDateTime}`;
-      this._el.setAttribute('datetime', date.toTimeString());
+      this._el.setAttribute('datetime', time.currentDateTime);
     }
   }
