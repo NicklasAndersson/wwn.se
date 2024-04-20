@@ -9,7 +9,7 @@ class Clock {
     }
   
     async _start() {
-      const response = await fetch("https://wwn-se-time.wwn.workers.dev/");
+      const response = await fetch("https://tid.wwn.se/");
       const time = await response.json();
 
       this._el.innerHTML = `${time.currentDateTime}`;
