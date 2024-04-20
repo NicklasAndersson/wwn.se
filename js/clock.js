@@ -1,9 +1,9 @@
 class Clock {
     constructor(options) {
       this._el = $.el('#clock');
-      this._delimiter = options.delimiter;
-      this._twentyFourHourClock = options.twentyFourHourClock;
-      this._setTime = this._setTime.bind(this);
+      //this._delimiter = options.delimiter;
+      //this._twentyFourHourClock = options.twentyFourHourClock;
+      //this._setTime = this._setTime.bind(this);
       this._el.addEventListener('click', options.toggleHelp);
       this._start();
     }
