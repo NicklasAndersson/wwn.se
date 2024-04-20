@@ -84,7 +84,7 @@ const CONFIG = {
 
 
     {
-      category: 'Fun',
+      category: 'Media',
       name: 'YouTube',
       key: 'y',
       url: 'https://youtube.com',
@@ -94,30 +94,10 @@ const CONFIG = {
       quickLaunch: false,
     },
     {
-      category: 'Fun',
-      name: 'Reddit',
-      key: 'r',
-      url: 'https://reddit.com',
-      search: '/search?q={}',
-      color: 'linear-gradient(135deg, #FF8456, #FF4500)',
-      icon: 'reddit',
-      quickLaunch: false,
-    },
-    {
-      category: 'Fun',
-      name: 'Netflix',
-      key: 'n',
-      url: 'https://www.netflix.com',
-      color: 'linear-gradient(135deg, #E50914, #CB020C)',
-      icon: 'netflix',
-      quickLaunch: false,
-    },
-    {
-      category: 'Fun',
-      name: 'Spotify',
-      key: 's',
-      url: 'https://open.spotify.com/',
-      search: '/search/{}',
+      category: 'Media',
+      name: 'Plex',
+      key: 'p',
+      url: 'https://app.plex.tv/',
       color: '#1dd35e',
       icon: 'spotify',
       quickLaunch: false,
