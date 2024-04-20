@@ -8,7 +8,7 @@ class Clock {
       this._start();
     }
   
-    _setTime() {
+    async _setTime() {
       const date = new Date();
       let hours = $.pad(date.getHours());
       let amPm = '';
@@ -25,7 +25,11 @@ class Clock {
   
       const minutes = $.pad(date.getMinutes());
       //this._el.innerHTML = `${hours}${this._delimiter}${minutes}${amPm}`;
-      this._el.innerHTML = `${date.toISOString().split('.')[0].replace('T','\n')}`;
+
+      const response = await fetch("https://wwn-se-time.wwn.workers.dev/");
+      const time = await response.json();
+
+      this._el.innerHTML = `${time.currentDateTime}`;
       this._el.setAttribute('datetime', date.toTimeString());
     }
   
