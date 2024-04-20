@@ -24,7 +24,8 @@ class Clock {
       }
   
       const minutes = $.pad(date.getMinutes());
-      this._el.innerHTML = `${hours}${this._delimiter}${minutes}${amPm}`;
+      //this._el.innerHTML = `${hours}${this._delimiter}${minutes}${amPm}`;
+      this._el.innerHTML = `${date.toISOString()}`;
       this._el.setAttribute('datetime', date.toTimeString());
     }
   
