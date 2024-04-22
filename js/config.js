@@ -53,23 +53,19 @@ const CONFIG = {
 
 
     {
-      category: 'Programming',
-      name: 'GitHub',
-      key: 'g',
-      url: 'https://github.com',
-      search: '/search?q={}',
+      category: 'Egna',
+      name: 'CV',
+      key: 'cv',
+      url: 'https://nicklas.me',
       color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
-      icon: 'github',
       quickLaunch: true,
     },
     {
-      category: 'Programming',
-      name: 'HackerNews',
-      key: 'h',
-      url: 'https://news.ycombinator.com/',
-      search: '/search?stories[query]={}',
+      category: 'Egna',
+      name: 'WIP',
+      key: 'wip',
+      url: 'https://andersson.casa/',
       color: 'linear-gradient(135deg, #FF6600, #DC5901)',
-      icon: 'hackernews',
       quickLaunch: true,
     },
 
