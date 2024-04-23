@@ -1,10 +1,11 @@
 class Clock {
     constructor(options) {
       this._el = $.el('#clock');
-      //this._delimiter = options.delimiter;
-      //this._twentyFourHourClock = options.twentyFourHourClock;
-      //this._setTime = this._setTime.bind(this);
+      this._elIp = $.el('#ip');
+
       this._el.addEventListener('click', options.toggleHelp);
+      this._elIp.addEventListener('click', options.toggleHelp);
+
       this._start();
     }
   
@@ -14,5 +15,7 @@ class Clock {
 
       this._el.innerHTML = `${time.currentDateTime}`;
       this._el.setAttribute('datetime', time.currentDateTime);
+
+      this._elIp.innerHTML = `${time.ip}`;
     }
   }
