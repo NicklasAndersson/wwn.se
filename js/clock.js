@@ -3,10 +3,12 @@ class Clock {
       this._el = $.el('#clock');
       this._elIp = $.el('#ip');
 
-      this._el.addEventListener('click', options.toggleHelp);
-      this._elIp.addEventListener('click', options.toggleHelp);
-
+      this._el.addEventListener('click', options.toggleHelp && clearInterval(timerID));
+      this._elIp.addEventListener('click', options.toggleHelp && clearInterval(timerID));
       this._start();
+      var timerID = setInterval(function() {
+        this._start();
+      }, 30 * 1000); 
     }
   
     async _start() {
