@@ -68,6 +68,14 @@ const CONFIG = {
       color: 'linear-gradient(135deg, #FF6600, #DC5901)',
       quickLaunch: true,
     },
+    {
+      category: 'Egna',
+      name: 'Recept',
+      key: 're',
+      url: 'https://url.wwn.se/recept',
+      color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
+      quickLaunch: true,
+    },
 
 
     {
@@ -101,9 +109,9 @@ const CONFIG = {
     },
     {
       category: 'Other',
-      name: 'Recept',
-      key: 're',
-      url: 'https://url.wwn.se/recept',
+      name: 'nextdns test',
+      key: 'dns',
+      url: 'https://test.nextdns.io/',
       color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
       quickLaunch: true,
     },
