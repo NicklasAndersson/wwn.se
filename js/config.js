@@ -85,7 +85,6 @@ const CONFIG = {
       url: 'https://youtube.com',
       search: '/results?search_query={}',
       color: 'linear-gradient(135deg, #cd201f, #cd4c1f)',
-      icon: 'youtube',
       quickLaunch: false,
     },
     {
@@ -94,7 +93,14 @@ const CONFIG = {
       key: 'p',
       url: 'https://app.plex.tv/',
       color: '#1dd35e',
-      icon: 'spotify',
+      quickLaunch: false,
+    },
+    {
+      category: 'Media',
+      name: 'Wallabag',
+      key: 'walla',
+      url: 'https://wallabag.nicklas-andersson.se',
+      color: '#1dd35e',
       quickLaunch: false,
     },
 
