@@ -155,6 +155,7 @@ template {
   /* colors */
   --background: #0E0E0E;
   --foreground: #F1F1F1;
+  --not-ok: #FFDFDF;
 
   /* fonts */
   --base-font-size: 18px;
@@ -232,6 +233,10 @@ a,
 a:focus {
   color: inherit;
   outline: 0;
+}
+
+.not-ok {
+  color: var(--not-ok);
 }
 
 .hight200{
