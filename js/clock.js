@@ -2,14 +2,27 @@ class Clock {
     constructor(options) {
       this._el = $.el('#clock');
       this._elIp = $.el('#ip');
+      this._maxUpdates = 10;
+      this._updateCount = 0;
 
       this._el.addEventListener('click', options.toggleHelp);
       this._elIp.addEventListener('click', options.toggleHelp);
 
-      this._start();
+      this._update();
     }
   
-    async _start() {
+    _scheduleNextUpdate() {
+      if (this._updateCount >= this._maxUpdates) return;
+      const now = new Date();
+      const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+      setTimeout(() => this._update(), msUntilNextMinute + 500);
+    }
+
+    async _update() {
+      if (this._updateCount >= this._maxUpdates) return;
+
+      this._updateCount++;
+
       const response = await fetch("https://tid.wwn.se/");
       const time = await response.json();
 
@@ -17,5 +30,11 @@ class Clock {
       this._el.setAttribute('datetime', time.currentDateTime);
 
       this._elIp.innerHTML = `${time.ip}`;
+
+      if (this._updateCount >= this._maxUpdates) {
+        this._el.style.color = 'darkred';
+      } else {
+        this._scheduleNextUpdate();
+      }
     }
   }
