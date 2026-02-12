@@ -9,14 +9,17 @@ class Clock {
       this._elIp.addEventListener('click', options.toggleHelp);
 
       this._update();
-      this._interval = setInterval(() => this._update(), 31000);
     }
   
+    _scheduleNextUpdate() {
+      if (this._updateCount >= this._maxUpdates) return;
+      const now = new Date();
+      const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
+      setTimeout(() => this._update(), msUntilNextMinute + 1000);
+    }
+
     async _update() {
-      if (this._updateCount >= this._maxUpdates) {
-        clearInterval(this._interval);
-        return;
-      }
+      if (this._updateCount >= this._maxUpdates) return;
 
       this._updateCount++;
 
@@ -27,5 +30,7 @@ class Clock {
       this._el.setAttribute('datetime', time.currentDateTime);
 
       this._elIp.innerHTML = `${time.ip}`;
+
+      this._scheduleNextUpdate();
     }
   }
