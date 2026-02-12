@@ -15,7 +15,7 @@ class Clock {
       if (this._updateCount >= this._maxUpdates) return;
       const now = new Date();
       const msUntilNextMinute = (60 - now.getSeconds()) * 1000 - now.getMilliseconds();
-      setTimeout(() => this._update(), msUntilNextMinute + 1000);
+      setTimeout(() => this._update(), msUntilNextMinute + 500);
     }
 
     async _update() {
@@ -31,6 +31,10 @@ class Clock {
 
       this._elIp.innerHTML = `${time.ip}`;
 
-      this._scheduleNextUpdate();
+      if (this._updateCount >= this._maxUpdates) {
+        this._el.style.color = 'darkred';
+      } else {
+        this._scheduleNextUpdate();
+      }
     }
   }
