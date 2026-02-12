@@ -32,15 +32,7 @@ const CONFIG = {
       icon: 'drive',
       quickLaunch: false,
     },
-    {
-      category: 'General',
-      name: 'WhatsApp',
-      key: 'w',
-      url: 'https://web.whatsapp.com',
-      color: 'linear-gradient(135deg, #25D366, #128C7E, #075E54)',
-      icon: 'whatsapp',
-      quickLaunch: false,
-    },
+
     {
       category: 'General',
       name: 'Discord',
@@ -87,22 +79,6 @@ const CONFIG = {
       color: 'linear-gradient(135deg, #cd201f, #cd4c1f)',
       quickLaunch: false,
     },
-    {
-      category: 'Media',
-      name: 'Plex',
-      key: 'p',
-      url: 'https://app.plex.tv/',
-      color: '#1dd35e',
-      quickLaunch: false,
-    },
-    {
-      category: 'Media',
-      name: 'Wallabag',
-      key: 'walla',
-      url: 'https://wallabag.nicklas-andersson.se',
-      color: '#1dd35e',
-      quickLaunch: false,
-    },
 
 
     {
@@ -121,14 +97,7 @@ const CONFIG = {
       color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
       quickLaunch: true,
     },
-    {
-      category: 'Other',
-      name: 'whois',
-      key: 'whois',
-      url: 'https://http-whois.wwn.se/',
-      color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
-      quickLaunch: true,
-    },
+
     {
       category: 'Other',
       name: 'HASS',
