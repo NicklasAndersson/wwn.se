@@ -6,7 +6,9 @@ class Clock {
       this._updateCount = 0;
 
       this._el.addEventListener('click', options.toggleHelp);
-      this._elIp.addEventListener('click', options.toggleHelp);
+      this._elIp.addEventListener('click', () => {
+        navigator.clipboard.writeText(this._elIp.textContent.trim());
+      });
 
       this._update();
     }
