@@ -84,9 +84,8 @@ class Help {
   
       const commandListWithIcons =  this._commands
         .map(({ category, name, key, url, icon }, i) => {
-          const iconEl = CONFIG.iconExtension !== 'svg'
-                       ? `<img src='assets/icons/${icon}.png' height = 28px center style="filter: invert(${invertValue});">`
-                       : `<img src='assets/icons/${icon}.svg' onload="SVGInject(this)" height = 28px center style="fill: ${fgcolor};">`
+          const iconSrc = `https://favicon.wwn.se/blob/${url}`;
+          const iconEl = `<img src='${iconSrc}' height='28px' alt='${name}' style="filter: invert(${invertValue});">`
   
           if (category === currentCategory) {
             return `

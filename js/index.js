@@ -8,7 +8,16 @@ CONFIG.showKeys = localStorage.getItem('showKeysCookie') ?
   JSON.parse(localStorage.getItem('showKeysCookie')) :
   CONFIG.showKeys;
 
-
+// Prefetch favicon icons for all commands
+CONFIG.commands.forEach(command => {
+  if (command.url) {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = `https://favicon.wwn.se/blob/${command.url}`;
+    link.as = 'image';
+    document.head.appendChild(link);
+  }
+});
 
 const queryParser = new QueryParser({
   commands: CONFIG.commands,
