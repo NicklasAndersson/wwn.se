@@ -84,13 +84,7 @@ class Help {
   
       const commandListWithIcons =  this._commands
         .map(({ category, name, key, url, icon }, i) => {
-          let iconSrc;
-          try {
-            const domain = new URL(url).hostname;
-            iconSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-          } catch (e) {
-            iconSrc = '';
-          }
+          const iconSrc = `https://favicon.wwn.se/blob/${url}`;
           const iconEl = `<img src='${iconSrc}' height='28px' alt='${name}' style="filter: invert(${invertValue});">`
   
           if (category === currentCategory) {

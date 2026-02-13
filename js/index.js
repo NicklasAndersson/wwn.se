@@ -11,14 +11,11 @@ CONFIG.showKeys = localStorage.getItem('showKeysCookie') ?
 // Prefetch favicon icons for all commands
 CONFIG.commands.forEach(command => {
   if (command.url) {
-    try {
-      const domain = new URL(command.url).hostname;
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-      link.as = 'image';
-      document.head.appendChild(link);
-    } catch (e) {}
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.href = `https://favicon.wwn.se/blob/${command.url}`;
+    link.as = 'image';
+    document.head.appendChild(link);
   }
 });
 
