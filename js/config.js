@@ -1,7 +1,7 @@
 const CONFIG = {
   /**
-   * The category, name, key, url, search path, color, icon, and quicklaunch properties for your commands.
-   * Icons must be added to "icons" folder and their values/names must be updated.
+   * The category, name, key, url, search path, color, and quicklaunch properties for your commands.
+   * Icons are automatically fetched from Google's Favicon API based on each command's URL.
    * If none of the specified keys are matched, the '*' key is used.
    * Commands without a category don't show up in the help menu.
    * Update line 11 and 13 if you prefer using Google.
@@ -249,7 +249,7 @@ const CONFIG = {
   twentyFourHourClock: true,
 
   /**
-   * File extension for icon images
+   * File extension for icon images (unused — icons now fetched via Google Favicon API)
    */
   iconExtension: 'png'
 };

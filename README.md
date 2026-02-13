@@ -67,7 +67,7 @@ Each command has the following properties:
 | `url`         | Base URL to navigate to                                  | Yes      |
 | `search`      | Search path appended to `url`; `{}` is the query placeholder | No   |
 | `color`       | Background color/gradient shown when the command matches  | No       |
-| `icon`        | Icon filename (without extension) from the icons folder   | No       |
+| `icon`        | *(unused)* Icons are now auto-fetched via Google Favicon API | No       |
 | `quickLaunch` | Include in quick-launch (`q!`) batch open                 | No       |
 
 Example – add a command for GitHub:
@@ -115,7 +115,7 @@ Adjust the `limit` for each influencer to control how many suggestions it contri
 | `pathDelimiter`      | `/`     | Separator between key and path (e.g. `r/r/startpages`) |
 | `clockDelimiter`     | ` `     | Separator between hours and minutes on the clock     |
 | `twentyFourHourClock`| `true`  | Use 24-hour clock format                             |
-| `iconExtension`      | `png`   | File extension for command icon images               |
+| `iconExtension`      | `png`   | *(unused)* Icons now fetched via Google Favicon API |
 
 ## Special Commands
 
