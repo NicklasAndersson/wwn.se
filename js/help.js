@@ -84,9 +84,14 @@ class Help {
   
       const commandListWithIcons =  this._commands
         .map(({ category, name, key, url, icon }, i) => {
-          const iconEl = CONFIG.iconExtension !== 'svg'
-                       ? `<img src='assets/icons/${icon}.png' height = 28px center style="filter: invert(${invertValue});">`
-                       : `<img src='assets/icons/${icon}.svg' onload="SVGInject(this)" height = 28px center style="fill: ${fgcolor};">`
+          let iconSrc;
+          try {
+            const domain = new URL(url).hostname;
+            iconSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+          } catch (e) {
+            iconSrc = '';
+          }
+          const iconEl = `<img src='${iconSrc}' height='28px' alt='${name}' style="filter: invert(${invertValue});">`
   
           if (category === currentCategory) {
             return `
