@@ -42,6 +42,15 @@ const CONFIG = {
       icon: 'discord',
       quickLaunch: false,
     },
+    {
+      category: 'General',
+      name: 'GitHub',
+      key: 'g',
+      url: 'https://github.com',
+      search: '/search?q={}',
+      color: '#333',
+      quickLaunch: false,
+    },
 
 
     {
@@ -113,6 +122,30 @@ const CONFIG = {
       url: 'https://nicklas-andersson.se',
       color: 'linear-gradient(135deg, #FFF, #3F3F3F)',
       quickLaunch: true,
+    },
+    {
+      category: 'Other',
+      name: 'Nextcloud',
+      key: 'nc',
+      url: 'https://cloud.wwn.se',
+      color: '#0082c9',
+      quickLaunch: false,
+    },
+    {
+      category: 'Other',
+      name: 'Dash',
+      key: 'da',
+      url: 'https://dash.nicklas-andersson.se',
+      color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
+      quickLaunch: false,
+    },
+    {
+      category: 'Other',
+      name: 'IT-Tools',
+      key: 'it',
+      url: 'https://it-tools.nicklas-andersson.se',
+      color: 'linear-gradient(135deg, #1a8a5c, #26b370)',
+      quickLaunch: false,
     },
     {
       category: 'Other',
