@@ -77,6 +77,22 @@ const CONFIG = {
       color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
       quickLaunch: true,
     },
+    {
+      category: 'Egna',
+      name: 'Bibliotek',
+      key: 'bib',
+      url: 'https://bibliotek.nicklas-andersson.se/',
+      color: 'linear-gradient(135deg, #5C4033, #795548)',
+      quickLaunch: false,
+    },
+    {
+      category: 'Egna',
+      name: 'QR',
+      key: 'qr',
+      url: 'https://qr.wwn.se/',
+      color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
+      quickLaunch: false,
+    },
 
 
     {
