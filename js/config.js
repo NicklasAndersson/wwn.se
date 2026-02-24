@@ -93,6 +93,14 @@ const CONFIG = {
       color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
       quickLaunch: false,
     },
+    {
+      category: 'Egna',
+      name: 'Favicon',
+      key: 'fav',
+      url: 'https://favicon.wwn.se/',
+      color: 'linear-gradient(135deg, #2b2b2b, #3b3b3b)',
+      quickLaunch: false,
+    },
 
 
     {
