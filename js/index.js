@@ -71,3 +71,7 @@ new Clock({
   toggleHelp: help.toggle,
   twentyFourHourClock: CONFIG.twentyFourHourClock,
 });
+
+if (new URLSearchParams(window.location.search).has('help')) {
+  help.toggle(true);
+}
