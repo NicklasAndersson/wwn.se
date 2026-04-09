@@ -117,6 +117,22 @@ Adjust the `limit` for each influencer to control how many suggestions it contri
 | `twentyFourHourClock`| `true`  | Use 24-hour clock format                             |
 | `iconExtension`      | `png`   | *(unused)* Icons now fetched via Google Favicon API |
 
+## URL Parameters
+
+Append these query parameters to the page URL to control behavior:
+
+| Parameter              | Description                                              |
+|------------------------|----------------------------------------------------------|
+| `?q=<query>`           | Submit a search query on load                            |
+| `?hideclock`           | Hide the clock display                                   |
+| `?hideip`              | Hide the IP address                                      |
+| `?refresh=<duration>`  | Set the clock refresh duration (ISO 8601, e.g. `PT1H`)  |
+| `?helpParams`          | Show an overlay listing all URL parameters and search commands |
+
+Parameters can be combined: `?hideclock&hideip`.
+
+> **Tip:** Visit the page with `?helpParams` to see a quick-reference overlay of all parameters and search commands directly in the browser.
+
 ## Special Commands
 
 These are typed directly into the search bar:
