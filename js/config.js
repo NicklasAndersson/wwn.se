@@ -134,7 +134,7 @@ const CONFIG = {
     {
       category: 'Other',
       name: 'Systembolaget',
-      key: 'systt',
+      key: 'syst',
       url: 'https://systembolaget.wwn.se/',
       color: 'linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)',
       quickLaunch: true,
