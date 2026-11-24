@@ -173,14 +173,6 @@ const CONFIG = {
     },
     {
       category: 'Other',
-      name: 'IT-Tools',
-      key: 'it',
-      url: 'https://it-tools.nicklas-andersson.se',
-      color: 'linear-gradient(135deg, #1a8a5c, #26b370)',
-      quickLaunch: false,
-    },
-    {
-      category: 'Other',
       name: 'Translate',
       key: 'tr',
       url: 'https://translate.google.com/',
